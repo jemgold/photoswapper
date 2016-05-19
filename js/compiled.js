@@ -143,7 +143,7 @@ var App = function (_React$Component) {
         return R.path([font, 0, 'postScriptName'], systemFonts);
       }, fontArray);
       postScriptNames.forEach(function (font, i) {
-        csInterface.evalScript('duplicateLayer("' + font + '", "' + i + '")', function (bounds) {
+        csInterface.evalScript('duplicateLayer("' + font + '", "' + (i + i) + '")', function (bounds) {
           return console.log(bounds);
         });
       });

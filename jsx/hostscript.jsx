@@ -21,11 +21,16 @@ function getActiveTextItem() {
 function duplicateLayer(postScriptName, i) {
   var layer = getActiveLayer();
   if (layer && layer.textItem) {
+    var _i = parseInt(i, 10);
+    // TODO this isn't checking if the parent is an artboard
     var artboard = layer.parent;
     var newArtboard = artboard.duplicate();
     var bounds = newArtboard.bounds;
 
-    newArtboard.translate(bounds[0], bounds[1]);
+    // bounds is an array of [ h, w, x, y] I think
+    newArtboard.translate((bounds[2] + 200) * _i, 0);
+
+    newArtboard.layers[0].textItem.font = postScriptName;
     //
     // var newTextLayer = artboard.children[0];
     // if (newArtboard.children[0].textItem) {

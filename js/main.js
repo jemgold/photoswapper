@@ -117,7 +117,7 @@ class App extends React.Component {
       'postScriptName'
     ], systemFonts), fontArray)
     postScriptNames.forEach((font, i) => {
-      csInterface.evalScript(`duplicateLayer("${font}", "${i}")`, (bounds) => console.log(bounds));
+      csInterface.evalScript(`duplicateLayer("${font}", "${i + i}")`, (bounds) => console.log(bounds));
     })
   }
 
